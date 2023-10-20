@@ -1,9 +1,29 @@
 const gameScreen= document.querySelector('.game-screen');
 
+const screenWidth = window.innerWidth;
+
+function calculateBubbleCount() {
+    let bubbleCount = 90; 
+
+    if (screenWidth <= 375) {
+        bubbleCount = 48; 
+    }
+    else if (screenWidth <=430 && screenWidth >= 375) {
+        bubbleCount = 60;
+    }
+     else if (screenWidth <= 1023) {
+        bubbleCount = 90; 
+    }
+
+    return bubbleCount;
+}
+
+const totalBubbles = calculateBubbleCount();
+
 //generate bubbles
 function makeBubble(){
     let bubbleHTML='';
-    for(var i=0; i<90; i++){
+    for(var i=0; i<totalBubbles; i++){
         bubbleHTML+=`<div class="bubble">${Math.floor(Math.random()*98)}</div>`;
     }
     gameScreen.innerHTML=bubbleHTML;
