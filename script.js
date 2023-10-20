@@ -95,11 +95,11 @@ function PlayAgain(){
     const playAgain= document.querySelector('.play-again');
     playAgain.addEventListener('click', ()=>{
         gameScreen.innerHTML="";
-        makeBubble();
         time.innerHTML=60;
         score.innerHTML=0;
         scoreCount=0;
         hitButton.innerHTML=0;
+        makeBubble();
         timer();
     })
 }
