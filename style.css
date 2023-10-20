@@ -125,3 +125,49 @@ body{
     width:38px;
     margin-left: 13px;
 }
+
+@media (max-width: 767px) {
+    .main-screen {
+        width: 90%;
+        height: 75%;
+    }
+
+    .score-screen {
+        padding: 20px 25px;
+    }
+
+    .score-box {
+        margin-right: 10px;
+    }
+
+    .heading {
+        font-size: 18px;
+    }
+
+    .hit,
+    .timer,
+    .score {
+        height: 25px;
+        width: 30px;
+        font-size: 18px;
+    }
+
+    .bubble {
+        height: 42px;
+        width: 42px;
+        font-size: 18px;
+    }
+
+    .start-game,
+    .play-again {
+        font-size: 24px;
+        padding: 15px;
+        margin-top: 45%;
+    }
+
+    .play-again-icon {
+        height: 28px;
+        width: 28px;
+        margin-left: 10px;
+    }
+}
