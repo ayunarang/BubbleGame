@@ -42,7 +42,6 @@ body{
 
 .score-box{
     display:flex;
-
 }
 
 .heading{
@@ -95,6 +94,11 @@ body{
 
 .bubble:hover{
     background-color: #524a41;
+}
+
+.bubble:active{
+    background-color: #524a41;
+    user-select: none;
 }
 
 .start-game,
