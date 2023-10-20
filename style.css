@@ -1,0 +1,127 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+body{
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    background-color: #B0D9B1;
+    height:100%;
+    width:100%;
+    position: fixed;
+}
+
+.main-screen{
+    border-radius: 5px;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    background-color: #e8ffea;
+    height: 85%;
+    width:80%;
+    position: relative;
+}
+
+.score-screen{
+    position: relative;
+    height:75px;
+    background-color: #618264;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    display:flex;
+    padding:42px 290px;
+    justify-content:space-between ;
+}
+
+.score-box{
+    display:flex;
+
+}
+
+.heading{
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    align-self: center;
+}
+
+.hit,
+.timer,
+.score{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    height: 30px;
+    width: 35px;
+    color: #618264;
+    border-radius: 3px;
+    margin-left: 10px;
+    font-size: 19px ;
+    font-weight: 600;
+    box-shadow: 2px 3px rgb(0,0,0,0.3);
+}
+
+.game-screen{
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.bubble{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    color:white;
+    font-size: 18px;
+    font-weight: 400;
+    background-color: #675D50;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.bubble:hover{
+    background-color: #524a41;
+}
+
+.start-game,
+.play-again{
+    position: relative;
+    background-color: #618264;
+    color:white;
+    font-size:32px;
+    font-weight: 600;
+    margin-top: 13%;
+    padding: 20px;
+    box-shadow: 4px 6px rgb(0,0,0,0.3);
+    cursor: pointer;
+}
+
+.start-game:active,
+.play-again:active{
+    background-color: #4b654e;
+}
+
+.play-again{
+    display:flex;
+    padding: 17px;
+}
+
+.play-again-icon{
+    height:38px;
+    width:38px;
+    margin-left: 13px;
+}

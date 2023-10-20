@@ -1,0 +1,85 @@
+const gameScreen= document.querySelector('.game-screen');
+
+//generate bubbles
+function makeBubble(){
+    let bubbleHTML='';
+    for(var i=0; i<90; i++){
+        bubbleHTML+=`<div class="bubble">${Math.floor(Math.random()*98)}</div>`;
+    }
+    gameScreen.innerHTML=bubbleHTML;
+    hit();
+    const bubble = document.querySelectorAll('.bubble');
+    calculateScore(bubble);
+}
+
+//start game
+const startgame= document.querySelector('.start-game');
+startgame.addEventListener('click', ()=>{
+    gameScreen.innerHTML="";
+    makeBubble();
+    timer();
+});
+
+
+//generate hit value
+const hitButton= document.querySelector('.hit');
+function hit(){
+    hitButton.innerHTML=Math.floor(Math.random()*99);
+}
+
+var score= document.querySelector('.score');
+var scoreCount=0;
+
+//bubble event-listener and calculate score
+function calculateScore(bubble){
+    bubble.forEach(function(bubbleElement){
+        bubbleElement.addEventListener('click',()=>{
+            var bubbleClicked= bubbleElement;
+            if(hitButton.innerHTML!=bubbleClicked.innerHTML){
+                scoreCount= scoreCount-1;
+            }
+            else{
+                scoreCount= scoreCount+1;
+            }
+            score.innerHTML=scoreCount;
+            makeBubble();
+    })
+    })
+} 
+
+//timer
+var timerID;
+var time= document.querySelector('.timer');
+function timer(){
+    timerID= setInterval(() => {
+        time.innerHTML=time.innerHTML-1;
+        if(time.innerHTML<=0){
+            clearInterval(timerID);
+            gameOver();
+        }
+        
+    }, 1000);
+}
+
+//game-over
+function gameOver(){
+    gameScreen.innerHTML=`<div class="play-again">
+    <div class="play-again-text">PLAY AGAIN</div>
+    <img src="icons8-reset-64.png" class="play-again-icon">
+</div>`
+PlayAgain();
+}
+
+//play again 
+function PlayAgain(){
+    const playAgain= document.querySelector('.play-again');
+    playAgain.addEventListener('click', ()=>{
+        gameScreen.innerHTML="";
+        makeBubble();
+        time.innerHTML=60;
+        timer();
+    })
+}
+
+
+
