@@ -77,6 +77,9 @@ function PlayAgain(){
         gameScreen.innerHTML="";
         makeBubble();
         time.innerHTML=60;
+        score.innerHTML=0;
+        scoreCount=0;
+        hitButton.innerHTML=0;
         timer();
     })
 }
