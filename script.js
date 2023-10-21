@@ -1,4 +1,6 @@
 const gameScreen= document.querySelector('.game-screen');
+let hitNumber;
+let randomPosition;
 
 //generate bubbles
 function makeBubble(){
@@ -15,12 +17,23 @@ function makeBubble(){
          else if (screenWidth <= 1023) {
             bubbleCount = 90; 
         }
+        else{
+            bubbleCount=90;
+        }
         return bubbleCount;
     }
-    
+    let numberOfBubbles= totalBubbles();
+
+    hitNumber=Math.floor(Math.random() * numberOfBubbles);
+    randomPosition=Math.floor(Math.random() * numberOfBubbles);
     let bubbleHTML='';
-    for(var i=0; i<totalBubbles; i++){
-        bubbleHTML+=`<div class="bubble">${Math.floor(Math.random()*98)}</div>`;
+    for(var i=0; i<numberOfBubbles; i++){
+        if (i!= randomPosition) {
+            bubbleHTML += `<div class="bubble">${Math.floor(Math.random() * 98)}</div>`;
+            console.log(bubbleHTML);
+        } else {
+            bubbleHTML += `<div class="bubble">${hitNumber}</div>`;
+        }
     }
     gameScreen.innerHTML=bubbleHTML;
     hit();
