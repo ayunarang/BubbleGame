@@ -53,28 +53,28 @@ startgame.addEventListener('click', ()=>{
 //generate hit value
 const hitButton= document.querySelector('.hit');
 function hit(){
-    hitButton.innerHTML=Math.floor(Math.random()*99);
+    hitButton.innerHTML=hitNumber;
 }
 
 var score= document.querySelector('.score');
 var scoreCount=0;
 
+
 //bubble event-listener and calculate score
-function calculateScore(bubble){
-    bubble.forEach(function(bubbleElement){
-        bubbleElement.addEventListener('click',()=>{
-            var bubbleClicked= bubbleElement;
-            if(hitButton.innerHTML!=bubbleClicked.innerHTML){
-                scoreCount= scoreCount-1;
+function calculateScore(bubble) {
+    bubble.forEach(function(bubbleElement, index) {
+        bubbleElement.addEventListener('click', () => {
+            if (index !== randomPosition) {
+                scoreCount = scoreCount - 1;
+            } else {
+                scoreCount = scoreCount + 1;
             }
-            else{
-                scoreCount= scoreCount+1;
-            }
-            score.innerHTML=scoreCount;
+            score.innerHTML = scoreCount;
             makeBubble();
-    })
-    })
-} 
+        });
+    });
+}
+
 
 //timer
 var timerID;
@@ -106,12 +106,8 @@ function PlayAgain(){
         gameScreen.innerHTML="";
         time.innerHTML=60;
         score.innerHTML=0;
-        scoreCount=0;
         hitButton.innerHTML=0;
         makeBubble();
         timer();
     })
 }
-
-
-
