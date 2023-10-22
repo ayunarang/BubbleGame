@@ -157,9 +157,9 @@ body{
     }
 
     .bubble {
-        height: 42px;
-        width: 42px;
-        font-size: 18px;
+        height: 38px;
+        width: 38px;
+        font-size: 16px;
     }
 
     .start-game,
