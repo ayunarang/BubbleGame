@@ -207,11 +207,11 @@ body{
     .play-again {
         font-size: 24px;
         padding: 15px;
-        margin-top: 38%;
+        margin-top: 35%;
     }
 
     .username-input{
-        top:25%;
+        top:35%;
     }
 
     .game-screen{
