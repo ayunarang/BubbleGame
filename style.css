@@ -42,6 +42,7 @@ body{
 
 .score-box{
     display:flex;
+
 }
 
 .heading{
@@ -77,6 +78,35 @@ body{
     align-items: center;
 }
 
+.welcome{
+    font-size: 30px;
+    text-align: center;
+    margin: 10px 0px;
+    top:7%;
+    color: #39513b;
+    font-weight: 900;
+    cursor: pointer;
+    display: block;
+    position: relative;
+}
+
+.username-text{
+    position: relative;
+    top:12%;
+    text-align: center;
+    font-size: 16px;
+    color:  #3b3731;
+}
+
+.username-input{
+    position: relative;
+    top:19%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    outline:#3b3731;
+}
+
 .bubble{
     display: flex;
     justify-content: center;
@@ -101,6 +131,16 @@ body{
     user-select: none;
 }
 
+.player-score{
+    position: relative;
+    color:#618264;
+    font-size:32px;
+    font-weight: 900;
+    margin-top: 20%;
+    padding: 20px;
+    text-align: center;
+}
+
 .start-game,
 .play-again{
     position: relative;
@@ -108,7 +148,7 @@ body{
     color:white;
     font-size:32px;
     font-weight: 600;
-    margin-top: 13%;
+    margin-top: 10%;
     padding: 20px;
     box-shadow: 4px 6px rgb(0,0,0,0.3);
     cursor: pointer;
@@ -120,15 +160,16 @@ body{
 }
 
 .play-again{
-    display:flex;
+    position: relative;
     padding: 17px;
+    margin-top: 40px;
+    text-align: center;
 }
 
-.play-again-icon{
-    height:38px;
-    width:38px;
-    margin-left: 13px;
+.end-screen{
+    align-items: center;
 }
+
 
 @media (max-width: 767px) {
     .main-screen {
@@ -169,9 +210,16 @@ body{
         margin-top: 45%;
     }
 
-    .play-again-icon {
-        height: 28px;
-        width: 28px;
-        margin-left: 10px;
+    .game-screen{
+        padding:15px 3px;
+    }
+
+    .username-input{
+        padding: 5px;
+    }
+
+    .player-score{
+        font-size: 20px;
     }
 }
+
