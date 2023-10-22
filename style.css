@@ -210,6 +210,10 @@ body{
         margin-top: 38%;
     }
 
+    .username-input{
+        top:25%;
+    }
+
     .game-screen{
         padding:15px 3px;
     }
