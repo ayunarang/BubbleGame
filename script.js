@@ -9,10 +9,10 @@ function makeBubble(){
 
     function totalBubbles(){
         if (screenWidth <= 375) {
-            bubbleCount = 42; 
+            bubbleCount = 36; 
         }
         else if (screenWidth <=430 && screenWidth >= 375) {
-            bubbleCount = 54;
+            bubbleCount = 49;
         }
          else if (screenWidth <= 1023) {
             bubbleCount = 90; 
@@ -64,7 +64,7 @@ var scoreCount=0;
 function calculateScore(bubble) {
     bubble.forEach(function(bubbleElement, index) {
         bubbleElement.addEventListener('click', () => {
-            if (index !== randomPosition) {
+            if (bubbleElement.innerHTML !== hitButton.innerHTML) {
                 scoreCount = scoreCount - 1;
             } else {
                 scoreCount = scoreCount + 1;
@@ -106,6 +106,7 @@ function PlayAgain(){
         gameScreen.innerHTML="";
         time.innerHTML=60;
         score.innerHTML=0;
+        scoreCount=0;
         hitButton.innerHTML=0;
         makeBubble();
         timer();
