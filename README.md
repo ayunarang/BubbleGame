@@ -1,2 +1,2 @@
 # BubbleGame
-This is a bubble game where you have to hit the bubbles in a given time. It also displays score of the player.
+Welcome to the Bubble Game! Your goal is to hit as many bubbles as you can within the time limit. The number 'Hit' indicates the bubble you need to hit. Score 1 point for hitting a matching-numbered bubble. It also has fun username suggestions!!
