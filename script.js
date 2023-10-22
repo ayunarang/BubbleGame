@@ -7,6 +7,31 @@ const welcome= document.querySelector('.welcome');
 const usernametext= document.querySelector('.username-text');
 const usernameinput= document.querySelector('input');
 
+
+function typeWriterEffect(text, index = 0) {
+  if (index < text.length) {
+    usernameinput.setAttribute("placeholder", text.substring(0, index + 1));
+    index++;
+    setTimeout(() => typeWriterEffect(text, index), 50); 
+  }
+}
+
+function getRandomUsername() {
+  fetch("https://randomuser.me/api/")
+    .then(response => response.json())
+    .then(data => {
+      const username = data.results[0].login.username;
+      typeWriterEffect(username); 
+
+      setTimeout(getRandomUsername, 1500); 
+    })
+    .catch(error => {
+      console.error("Error fetching username: ", error);
+    });
+}
+getRandomUsername();
+
+
 //generate bubbles
 function makeBubble(){
     let bubbleCount;
