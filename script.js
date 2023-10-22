@@ -1,6 +1,7 @@
 const gameScreen= document.querySelector('.game-screen');
 let hitNumber;
 let randomPosition;
+let username;
 const screenWidth = window.innerWidth;
 const welcome= document.querySelector('.welcome');
 const usernametext= document.querySelector('.username-text');
@@ -50,7 +51,7 @@ function makeBubble(){
 const startgame= document.querySelector('.start-game');
 startgame.addEventListener('click', ()=>{
     if(usernameinput.value!=""){
-        const username= usernameinput.value.toUpperCase;
+        username= (usernameinput.value).toUpperCase();
      }
      else{
          username= "PLAYER";
