@@ -1,10 +1,13 @@
 const gameScreen= document.querySelector('.game-screen');
 let hitNumber;
 let randomPosition;
+const screenWidth = window.innerWidth;
+const welcome= document.querySelector('.welcome');
+const usernametext= document.querySelector('.username-text');
+const usernameinput= document.querySelector('input');
 
 //generate bubbles
 function makeBubble(){
-    const screenWidth = window.innerWidth;
     let bubbleCount;
 
     function totalBubbles(){
@@ -30,11 +33,13 @@ function makeBubble(){
     for(var i=0; i<numberOfBubbles; i++){
         if (i!= randomPosition) {
             bubbleHTML += `<div class="bubble">${Math.floor(Math.random() * 98)}</div>`;
-            console.log(bubbleHTML);
         } else {
             bubbleHTML += `<div class="bubble">${hitNumber}</div>`;
         }
     }
+    welcome.style.display='none';
+    usernametext.style.display='none'
+    usernameinput.style.display='none';
     gameScreen.innerHTML=bubbleHTML;
     hit();
     const bubble = document.querySelectorAll('.bubble');
@@ -44,6 +49,12 @@ function makeBubble(){
 //start game
 const startgame= document.querySelector('.start-game');
 startgame.addEventListener('click', ()=>{
+    if(usernameinput.value!=""){
+        const username= usernameinput.value.toUpperCase;
+     }
+     else{
+         username= "PLAYER";
+     }
     gameScreen.innerHTML="";
     makeBubble();
     timer();
@@ -62,7 +73,7 @@ var scoreCount=0;
 
 //bubble event-listener and calculate score
 function calculateScore(bubble) {
-    bubble.forEach(function(bubbleElement, index) {
+    bubble.forEach(function(bubbleElement) {
         bubbleElement.addEventListener('click', () => {
             if (bubbleElement.innerHTML !== hitButton.innerHTML) {
                 scoreCount = scoreCount - 1;
@@ -92,9 +103,12 @@ function timer(){
 
 //game-over
 function gameOver(){
-    gameScreen.innerHTML=`<div class="play-again">
-    <div class="play-again-text">PLAY AGAIN</div>
-    <img src="icons8-reset-64.png" class="play-again-icon">
+    gameScreen.innerHTML=`<div class="end-screen">
+    <div class="player-score">${username} SCORE : ${scoreCount}</div>
+    <div class="play-again">
+        <div class="play-again-text">PLAY AGAIN</div>
+        
+    </div>
 </div>`
 PlayAgain();
 }
