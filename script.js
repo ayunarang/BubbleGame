@@ -14,7 +14,7 @@ function makeBubble(){
         if (screenWidth <= 375) {
             bubbleCount = 36; 
         }
-        else if (screenWidth <=430 && screenWidth >= 375) {
+        else if (screenWidth <=600 && screenWidth >= 375) {
             bubbleCount = 49;
         }
          else if (screenWidth <= 1023) {
